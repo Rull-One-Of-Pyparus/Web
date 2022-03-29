@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="resources/style.css"/>
+</h:head>
+<h:body>
+    <div class="menu">
+        <div class ="menu-content">
+            <div><img src="resources/img/logo.png" alt=""/></div>
+            <div></div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="book-content">
+        <div class="book-content-position">
+            <div class="registration">
+                <h:form styleClass="registration">
+                    <p>Логин</p>
+                    <h:inputText id="reg1" value="#{mngBean.login}" p:type="search" p:placeholder="Введите логин">
+                        <f:validator validatorId="loginValidator" />
+                    </h:inputText>
+                    <p>Пароль</p>
+                    <h:inputText id="reg2" value="#{mngBean.password}" p:type="search" p:placeholder="Введите пароль">
+                        <f:validator validatorId="passwordValidator" />
+                    </h:inputText>
+                    <p>Ник</p>
+                    <h:inputText id="reg3" value="#{mngBean.nickname}" p:type="search" p:placeholder="Введите ник">
+                        <f:validator validatorId="loginValidator" />
+                    </h:inputText>
+                    <h:commandButton value="Регистрация" action="#{mngBean.registration()}" styleClass="button"/>
+                    <h:outputText value="#{mngBean.error}"/>
+                </h:form>
+            </div>
+        </div>
+    </div>
+</h:body>
+</html>

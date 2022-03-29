@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>книга</title>
+    <link rel="stylesheet" href="resources/style.css"/>
+
+</h:head>
+<h:body>
+    <f:event type="preRenderView" listener="#{mngBean.checkUser()}" />
+    <div class="menu">
+        <div class ="menu-content">
+            <div><img src="resources/img/logo.png" alt=""/></div>
+            <div></div>
+            <div>
+                <a id="menu" href="Home.xhtml">Главная</a>
+                <a id="menu" href="Profile.xhtml">Профиль</a>
+                <a id="menu" href="Logout.xhtml">Выйти</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="book-content">
+        <div class="book-content-position">
+            <div class="book-content-img">
+                <img src="#{mngBean.getBookById(param.id).img}" alt=""/>
+                <br/>
+                <div class ="sub-head-line">
+                    <div class="sub-head-line-content">
+                        <div class="sub-head-line-text">Действия</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="book-content-block">
+                <div>Название:
+                    <h:outputText value="#{mngBean.getBookById(param.id).name}"/>
+                </div>
+                <div>Автор:
+                    <h:outputText value="#{mngBean.getBookById(param.id).author}"/>
+                </div><br></br>
+                <div>Описание:
+                    <h:outputText value="#{mngBean.getBookById(param.id).description}"/>
+                </div><br></br>
+                <div>Год издания:
+                    <h:outputText value="#{mngBean.getBookById(param.id).year}"/>
+                </div>
+                <div>Жанр:
+                    <h:outputText value="#{mngBean.getBookById(param.id).genre}"/>
+                </div>
+                <div>Язык:
+                    <h:outputText value="#{mngBean.getBookById(param.id).language}"/>
+                </div>
+                <div>Количество страниц:
+                    <h:outputText value="#{mngBean.getBookById(param.id).page}"/>
+                </div>
+                <div>ISBN:
+                    <h:outputText value="#{mngBean.getBookById(param.id).ISBN}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</h:body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Домашняя страница</title>
+    <link rel="stylesheet" href="resources/style.css"/>
+</h:head>
+<h:body>
+    <f:event type="preRenderView" listener="#{mngBean.checkUser()}" />
+    <div class="menu">
+        <div class ="menu-content">
+            <div><img src="resources/img/logo.png" alt=""/></div>
+            <div></div>
+            <div>
+                <a id="menu" href="Home.xhtml">Главная</a>
+                <a id="menu" href="Profile.xhtml">Профиль</a>
+                <a id="menu" href="Logout.xhtml">Выйти</a>
+            </div>
+        </div>
+    </div>
+    <div class="book-content">
+        <div class="book-content-position">
+            <div class="book-content-lists">
+                <div class ="sub-head-line">
+                    <div class="sub-head-line-content">
+                        <div class="sub-head-line-text">Список книг </div>
+                    </div>
+                </div>
+
+                <h:dataTable value = "#{mngBean.getAllBook()}" var = "bookEntity">
+
+                    <h:column>
+                        <f:facet name = "header">Название</f:facet>
+                        <a class="a-profile-book" href="Book.xhtml?id=#{bookEntity.idBook}">#{bookEntity.name}</a>
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Автор</f:facet>
+                        #{bookEntity.author}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Стр</f:facet>
+                        #{bookEntity.page}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Жанр</f:facet>
+                        #{bookEntity.genre}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Год издания</f:facet>
+                        #{bookEntity.year}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name = "header">Язык</f:facet>
+                        #{bookEntity.language}
+                    </h:column>
+                </h:dataTable>
+
+            </div>
+
+            <div class="back-menu" >
+
+            </div>
+
+
+        </div>
+    </div>
+</h:body>
+</html>
