@@ -1,7 +1,7 @@
 package com.example.web.Validator;
 
 import com.example.web.Config.Entity.User;
-import com.example.web.services.UserService;
+import com.example.web.Services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.Errors;
 

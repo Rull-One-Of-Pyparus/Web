@@ -1,8 +1,8 @@
-package com.example.web.security;
+package com.example.web.Controllers;
 
 import com.example.web.Config.Entity.User;
 import com.example.web.Validator.Validator;
-import com.example.web.services.UserService;
+import com.example.web.Services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.WebAttributes;

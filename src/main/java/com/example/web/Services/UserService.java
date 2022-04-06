@@ -1,9 +1,9 @@
-package com.example.web.services;
+package com.example.web.Services;
 
 import com.example.web.Config.Entity.Role;
 import com.example.web.Config.Entity.User;
-import com.example.web.repos.RoleRepository;
-import com.example.web.repos.UserRepository;
+import com.example.web.Repository.RoleRepository;
+import com.example.web.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

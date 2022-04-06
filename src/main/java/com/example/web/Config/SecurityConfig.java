@@ -1,6 +1,6 @@
 package com.example.web.Config;
 
-import com.example.web.services.UserDetailsService;
+import com.example.web.Services.UserDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;

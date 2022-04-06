@@ -1,7 +1,7 @@
 package com.example.web.Config;
 
 import com.example.web.Validator.Validator;
-import com.example.web.services.UserService;
+import com.example.web.Services.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;

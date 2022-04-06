@@ -1,8 +1,8 @@
-package com.example.web.services;
+package com.example.web.Services;
 
 import com.example.web.Config.Entity.Role;
 import com.example.web.Config.Entity.User;
-import com.example.web.repos.UserRepository;
+import com.example.web.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

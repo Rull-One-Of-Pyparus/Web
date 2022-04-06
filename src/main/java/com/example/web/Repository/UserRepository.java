@@ -1,4 +1,4 @@
-package com.example.web.repos;
+package com.example.web.Repository;
 
 import com.example.web.Config.Entity.User;
 import org.springframework.data.repository.CrudRepository;
