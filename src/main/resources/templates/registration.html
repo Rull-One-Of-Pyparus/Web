@@ -3,42 +3,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Registration</title>
+    <title>Регистрация</title>
+    <link th:rel="stylesheet" type="text/css" th:href="@{/styles/style.css}"/>
 </head>
-
 <body>
-<div class="formContent">
-    <h1 class="contentHeadingInfo contentHeadingReg">Регистрация</h1>
-    <h3 class="contentHeadingDescription">
-        Регистрация дает возможность добавлять фильмы свою коллекцию,<br/>
-        ставить оценки фильмам, оставлять комментарии
-    </h3>
-    <div class="formInputs">
-        <form method="POST" class="form-signin" th:object="${newUser}" th:action="@{/registration}">
-            <h2 class="form-signin-heading">Create your account</h2>
-            <div class="form-group">
-                <input type="text" th:field="*{username}" class="input" placeholder="username"
-                       autofocus="true">
-                <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">fds</span>
-            </div>
-            <div class="form-group">
-                <input type="text" th:field="*{login}" class="input" placeholder="login">
-                <span class="has-error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">fds</span>
-            </div>
-            <div class="form-group">
-                <input type="password" th:field="*{confirmPassword}" class="input" placeholder="password">
-                <span class="has-error" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}">fds</span>
-            </div>
-            <div class="form-group">
-                <input type="password" th:field="*{password}" class="input" placeholder="password">
-                <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">fds</span>
-            </div>
-            <button class="button" type="submit">Регистрация</button>
-        </form>
-        <a th:href="@{/login}">Уже зарегистрированы?</a>
+    <div class="menu">
+        <div class="menu-content">
+          <div><img th:src="@{/img/logo.png}" alt=""/></div>
+          <div></div>
+          <div></div>
+      </div>
     </div>
-</div>
+
+
+<<div class="book-content">
+        <div class="book-content-position">
+            <div class="registration">
+                <form method="POST" class="registration" th:object="${newUser}" th:action="@{/registration}">
+                    <h2 class="form-signin-heading">Регистрация</h2>
+                    <div class="registration">
+                        <input type="search" th:field="*{username}" class="input" placeholder="username"
+                               autofocus="true">
+                        <span class="has-error" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">fds</span>
+                    </div>
+                    <div class="registration">
+                        <input type="search" th:field="*{login}" class="input" placeholder="login">
+                        <span class="has-error" th:if="${#fields.hasErrors('login')}" th:errors="*{login}">fds</span>
+                    </div>
+                    <div class="registration">
+                        <input type="search" th:field="*{confirmPassword}" class="input" placeholder="password">
+                        <span class="has-error" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}">fds</span>
+                    </div>
+                    <div class="registration">
+                        <input type="search" th:field="*{password}" class="input" placeholder="password">
+                        <span class="has-error" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">fds</span>
+                    </div>
+                    <button class="button" type="submit">Регистрация</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
-</html>
 </html>

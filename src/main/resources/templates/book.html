@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title  th:text="${book.name}">Книга</title>
+    <link th:rel="stylesheet" type="text/css" th:href="@{/styles/style.css}"/>
+</head>
+<body>
+<div class="menu">
+    <div class="menu-content">
+        <div><img th:src="@{/img/logo.png}" alt=""/></div>
+        <div></div>
+        <div>
+            <a id="menu" th:href="@{/home}">Главная</a>
+            <a id="menu" th:href="@{/profile}">Профиль</a>
+            <a id="menu" th:href="@{/logout}">Выйти</a>
+        </div>
+    </div>
+</div>
+
+<div class="book-content">
+    <div class="book-content-position">
+        <div class="book-content-img">
+            <!--<img th:src="" alt=""/>-->
+            <br/>
+            <div class="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Действия</div>
+                </div>
+            </div>
+        </div>
+        <div class="book-content-block">
+            <div>Название:
+                <p th:text="${book.name}">
+            </div>
+            <div>Автор:
+                <p th:text="${book.author}">
+            </div>
+            <br>
+            <div>Описание:
+                <p th:text="${book.description}">
+            </div>
+            <br>
+            <div>Год издания:
+                <p th:text="${book.year}">
+            </div>
+            <div>Жанр:
+                <p th:text="${book.genre}">
+            </div>
+            <div>Язык:
+                <p th:text="${book.language}">
+            </div>
+            <div>Количество страниц:
+                <p th:text="${book.page}">
+            </div>
+            <div>ISBN:
+                <p th:text="${book.isbn}">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -3,30 +3,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Login</title>
-    <link th:rel="stylesheet" th:href="@{/styles/main.css}"/>
+    <title>Вход</title>
+    <link th:rel="stylesheet" type="text/css" th:href="@{/styles/style.css}"/>
 </head>
-
 <body>
-<div class="flex-container">
-    <div class="flex-item">
+<div class="menu">
+    <div class="menu-content">
+        <div><img th:src="@{/img/logo.png}" alt=""/></div>
+        <div></div>
+        <div></div>
     </div>
+</div>
 
-    <div class="flex-lol">
-        <form class="formContent" method="POST" th:action="@{/login}">
-            <h2 class="contentHeadingInfo contentHeadingReg">Log in</h2>
-            <div class="form-group">
-                <input name="username" type="text" class="input" placeholder="Username"
+<div class="book-content">
+    <div class="book-content-position">
+        <div class="registration">
+            <form class="registration" method="POST" th:action="@{/login}">
+                <p>Логин</p>
+                <input name="username" type="search" placeholder="Username"
                        autofocus="true"/>
-                <input name="password" type="password" class="input" placeholder="Password"/>
+                <p>Пароль</p>
+                <input name="password" type="search" placeholder="Password"/>
                 <!--/*@thymesVar id="errorMessage" type="java.lang.String"*/-->
                 <div class="alert" th:if="${errorMessage}" th:text="${errorMessage}"></div>
-                <button class="button" type="submit">Log In</button>
-            </div>
-        </form>
-
-        <h4 class="text-center"><a href="/registration">Create an account</a></h4>
+                <button class="button" type="submit">Войти</button>
+                <button class="button" type="submit">
+                    <a class="button" th:href="@{/registration}">Регистрация</a>
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 </body>
