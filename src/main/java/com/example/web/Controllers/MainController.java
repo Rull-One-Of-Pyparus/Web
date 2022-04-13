@@ -31,11 +31,6 @@ public class MainController {
         return "registration";
     }
 
-    @GetMapping(value = "/home")
-    public String home() {
-        return "home";
-    }
-
     @PostMapping("/registration")
     public String reg(@ModelAttribute("newUser") User user, HttpServletRequest request, BindingResult bindingResult) throws ServletException {
 
@@ -68,5 +63,10 @@ public class MainController {
     @RequestMapping(value = {"/login", "/"})
     public String login() {
         return "login";
+    }
+
+    @RequestMapping("/exit")
+    public String logout() {
+        return "logout";
     }
 }

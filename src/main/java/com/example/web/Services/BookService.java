@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -13,6 +14,11 @@ public class BookService {
 
     private final BookRepository bookRepository;
 
-    public Book getBookById(Long id) { return bookRepository.findById(id).orElseThrow(EntityNotFoundException::new);}
+    public Book getBookById(Long id) { return bookRepository.findById(id).orElseThrow(EntityNotFoundException::new); }
 
+    public List<Book> getAllBook() { return bookRepository.findAll(); }
+
+    public List<Book> findAllByUserAndStatus(Long userId, Long statusId) { return bookRepository.findAllByUserAndStatus(userId, statusId); }
+
+    public void addBook(Book book) { bookRepository.save(book); }
 }

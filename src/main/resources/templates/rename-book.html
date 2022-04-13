@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Добавить книгу</title>
+    <link th:rel="stylesheet" type="text/css" th:href="@{/styles/style.css}"/>
+</head>
+<body>
+<div class="menu">
+    <div class="menu-content">
+        <div><img th:src="@{/img/logo.png}" alt=""/></div>
+        <div></div>
+        <div>
+            <a id="menu" th:href="@{/home}">Главная</a>
+            <a id="menu" th:href="@{/profile}">Профиль</a>
+            <a id="menu" th:href="@{/exit}">Выйти</a>
+        </div>
+    </div>
+</div>
+
+<div class="book-content">
+    <div class="book-content-position">
+        <div class="registration">
+            <form method="POST" styleClass="registration" th:object="${book}" th:action="@{'/book/' + ${book.getId()}+ '/edit'}">
+                <div>Название:
+                    <input id="reg1" th:field="*{name}" type="search" placeholder="Название"/>
+                </div>
+                <div>Автор:
+                    <input id="reg2" th:field="*{author}" type="search" placeholder="Автор"/>
+                </div><br>
+                <div>Описание:
+                    <input id="reg3" th:field="*{description}" type="search" placeholder="Описание"/>
+                </div><br>
+                <div>Год издания:
+                    <input id="reg4" th:field="*{year}" type="search" placeholder="Год"/>
+                </div>
+                <div>Жанр:
+                    <input id="reg5" th:field="*{genre}" type="search" placeholder="Жанр"/>
+                </div>
+                <div>Язык:
+                    <input id="reg6" th:field="*{language}" type="search" placeholder="Язык"/>
+                </div>
+                <div>Количество страниц:
+                    <input id="reg7" th:field="*{page}" type="search" placeholder="Страниц"/>
+                </div>
+                <div>ISBN:
+                    <input id="reg8" th:field="*{isbn}" type="search" placeholder="ISBN"/>
+                </div>
+                <button class="button" type="submit">Изменить</button>
+
+            </form>
+        </div>
+
+
+    </div>
+</div>
+</div>
+</body>
+</html>

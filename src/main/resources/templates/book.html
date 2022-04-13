@@ -14,7 +14,7 @@
         <div>
             <a id="menu" th:href="@{/home}">Главная</a>
             <a id="menu" th:href="@{/profile}">Профиль</a>
-            <a id="menu" th:href="@{/logout}">Выйти</a>
+            <a id="menu" th:href="@{/exit}">Выйти</a>
         </div>
     </div>
 </div>
@@ -22,7 +22,7 @@
 <div class="book-content">
     <div class="book-content-position">
         <div class="book-content-img">
-            <!--<img th:src="" alt=""/>-->
+            <img th:src="@{book.img}" alt=""/>
             <br/>
             <div class="sub-head-line">
                 <div class="sub-head-line-content">

@@ -24,6 +24,12 @@
     align-items: flex-start;
 }
 
+table{
+    width: 100%;
+}
+th{
+    width: 10%;
+}
 
 a#menu{
     color: white;
@@ -48,22 +54,22 @@ a#menu:active{
     color: white;
 }
 
-.a-profile-book{
+a#a-profile-book{
     color: black;
 }
-a-profile-book:link{
+a#a-profile-book:link{
     color: black;;
 }
 
-a-profile-book:visited{
+a#a-profile-book:visited{
     color: black;
 }
 
-a-profile-book:hover{
+a#a-profile-book:hover{
     color: black;
 }
 
-a-profile-book:active{
+a#a-profile-book:active{
     color: black;
 }
 
@@ -218,6 +224,16 @@ input[type="search-in-lib"] {
     color: black;
 }
 
+.a-button{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.a-button:hover{
+    color: black;
+}
 
 .block-list-mylist{
     list-style-type: none;

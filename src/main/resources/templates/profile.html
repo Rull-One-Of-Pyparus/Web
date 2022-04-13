@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Профиль</title>
+    <link th:rel="stylesheet" type="text/css" th:href="@{/styles/style.css}"/>
+</head>
+<body>
+<div class="menu">
+    <div class="menu-content">
+        <div><img th:src="@{/img/logo.png}" alt=""/></div>
+        <div></div>
+        <div>
+            <a id="menu" th:href="@{/home}">Главная</a>
+            <a id="menu" th:href="@{/profile}">Профиль</a>
+            <a id="menu" th:href="@{/exit}">Выйти</a>
+        </div>
+    </div>
+</div>
+
+<div class="book-content">
+    <div class="book-content-position">
+        <div class="book-content-lists">
+            <div class="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Список книг</div>
+                </div>
+            </div>
+
+            <div>
+                <input id="search" th:type="search-in-lib" placeholder="Введите название"/>
+                <button type="button" name="search" class="button">Поиск</button>
+            </div>
+
+            <div class ="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Запланировано</div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                <tr>
+                    <th style="width: 30%">Название</th>
+                    <th style="width: 30%">Автор</th>
+                    <th>Стр</th>
+                    <th>Жанр</th>
+                    <th>Год издания</th>
+                    <th>Язык</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book: ${books}">
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.page}"></td>
+                    <td th:text="${book.genre}"></td>
+                    <td th:text="${book.year}"></td>
+                    <td th:text="${book.language}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            <div class ="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Читаю</div>
+                </div>
+            </div>
+
+            <!--<table>
+                <thead>
+                <tr>
+                    <th style="width: 30%">Название</th>
+                    <th style="width: 30%">Автор</th>
+                    <th>Стр</th>
+                    <th>Жанр</th>
+                    <th>Год издания</th>
+                    <th>Язык</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book: ${books}">
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.page}"></td>
+                    <td th:text="${book.genre}"></td>
+                    <td th:text="${book.year}"></td>
+                    <td th:text="${book.language}"></td>
+                </tr>
+                </tbody>
+            </table>-->
+
+
+            <div class ="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Перечитываю</div>
+                </div>
+            </div>
+
+            <!--<table>
+                <thead>
+                <tr>
+                    <th style="width: 30%">Название</th>
+                    <th style="width: 30%">Автор</th>
+                    <th>Стр</th>
+                    <th>Жанр</th>
+                    <th>Год издания</th>
+                    <th>Язык</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book: ${books}">
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.page}"></td>
+                    <td th:text="${book.genre}"></td>
+                    <td th:text="${book.year}"></td>
+                    <td th:text="${book.language}"></td>
+                </tr>
+                </tbody>
+            </table>-->
+
+
+            <div class ="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Прочитано</div>
+                </div>
+            </div>
+
+            <!--<table>
+                <thead>
+                <tr>
+                    <th style="width: 30%">Название</th>
+                    <th style="width: 30%">Автор</th>
+                    <th>Стр</th>
+                    <th>Жанр</th>
+                    <th>Год издания</th>
+                    <th>Язык</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book: ${books}">
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.page}"></td>
+                    <td th:text="${book.genre}"></td>
+                    <td th:text="${book.year}"></td>
+                    <td th:text="${book.language}"></td>
+                </tr>
+                </tbody>
+            </table>-->
+
+
+            <div class ="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Отложено</div>
+                </div>
+            </div>
+
+            <!--<table>
+                <thead>
+                <tr>
+                    <th style="width: 30%">Название</th>
+                    <th style="width: 30%">Автор</th>
+                    <th>Стр</th>
+                    <th>Жанр</th>
+                    <th>Год издания</th>
+                    <th>Язык</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book: ${books}">
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.page}"></td>
+                    <td th:text="${book.genre}"></td>
+                    <td th:text="${book.year}"></td>
+                    <td th:text="${book.language}"></td>
+                </tr>
+                </tbody>
+            </table>-->
+
+
+            <div class ="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Брошено</div>
+                </div>
+            </div>
+
+            <!--<table>
+                <thead>
+                <tr>
+                    <th style="width: 30%">Название</th>
+                    <th style="width: 30%">Автор</th>
+                    <th>Стр</th>
+                    <th>Жанр</th>
+                    <th>Год издания</th>
+                    <th>Язык</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book: ${books}">
+                    <td th:text="${book.name}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.page}"></td>
+                    <td th:text="${book.genre}"></td>
+                    <td th:text="${book.year}"></td>
+                    <td th:text="${book.language}"></td>
+                </tr>
+                </tbody>
+            </table>-->
+        </div>
+
+        <div class="back-menu" >
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+</body>
+</html>

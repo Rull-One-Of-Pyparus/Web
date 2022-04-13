@@ -18,19 +18,15 @@
 <div class="book-content">
     <div class="book-content-position">
         <div class="registration">
-            <form class="registration" method="POST" th:action="@{/login}">
-                <p>Логин</p>
-                <input name="username" type="search" placeholder="Username"
-                       autofocus="true"/>
-                <p>Пароль</p>
-                <input name="password" type="search" placeholder="Password"/>
-                <!--/*@thymesVar id="errorMessage" type="java.lang.String"*/-->
-                <div class="alert" th:if="${errorMessage}" th:text="${errorMessage}"></div>
-                <button class="button" type="submit">Войти</button>
+            <p>Вы хотите выйти?</p>
+            <div style="display: flex; flex-direction: row;">
+                <form th:action="@{/exit}" method="POST">
+                    <button class="button" type="submit">Да</button>
+                </form>
                 <button class="button" type="submit">
-                    <a class="a-button" th:href="@{/registration}">Регистрация</a>
+                    <a class="a-button" th:href="@{/profile}">Нет</a>
                 </button>
-            </form>
+            </div>
         </div>
     </div>
 </div>

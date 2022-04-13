@@ -3,12 +3,80 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Home</title>
+    <title>Главная</title>
+    <link th:rel="stylesheet" type="text/css" th:href="@{/styles/style.css}"/>
 </head>
-
 <body>
-<p>Технические работы</p>
+<div class="menu">
+    <div class="menu-content">
+        <div><img th:src="@{/img/logo.png}" alt=""/></div>
+        <div></div>
+        <div>
+            <a id="menu" th:href="@{/home}">Главная</a>
+            <a id="menu" th:href="@{/profile}">Профиль</a>
+            <a id="menu" th:href="@{/exit}">Выйти</a>
+        </div>
+    </div>
+</div>
+
+<div class="book-content">
+    <div class="book-content-position">
+        <div class="book-content-lists">
+            <div class="sub-head-line">
+                <div class="sub-head-line-content">
+                    <div class="sub-head-line-text">Список книг</div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%">Название</th>
+                        <th style="width: 30%">Автор</th>
+                        <th>Стр</th>
+                        <th>Жанр</th>
+                        <th>Год издания</th>
+                        <th>Язык</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="book: ${books}">
+                    <td>
+                        <a id="a-profile-book" th:href="@{/book/{id}(id=${book.id})}" >
+                            <h th:text="${book.name}"></h>
+                        </a>
+                    </td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.page}"></td>
+                    <td th:text="${book.genre}"></td>
+                    <td th:text="${book.year}"></td>
+                    <td th:text="${book.language}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="back-menu" >
+
+            <!--<h:form styleClass="admin-back-menu" rendered="#{mngBean.checkAdmin()}">
+                <div class ="sub-head-line">
+                    <div class="sub-head-line-content">
+                        <div class="sub-head-line-text">Действия </div>
+                    </div>
+                </div>
+                <h:form styleClass="add-edit">
+                    <h:commandButton value="Добавить книгу" styleClass="button"
+                                     action="AddBook" />
+                </h:form>
+            </h:form>
+            <h:outputText  value="Всего книг в Библиотеке: #{mngBean.getAllBook().size()}"/>-->
+
+        </div>
+
+
+    </div>
+</div>
+</div>
 </body>
-</html>
 </html>
