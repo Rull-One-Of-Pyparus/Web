@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Locale;
 
 @RequiredArgsConstructor
 @Service
@@ -21,4 +22,12 @@ public class BookService {
     public List<Book> findAllByUserAndStatus(Long userId, Long statusId) { return bookRepository.findAllByUserAndStatus(userId, statusId); }
 
     public void addBook(Book book) { bookRepository.save(book); }
+
+    public void deleteBook(Book book) { bookRepository.deleteById(book.getId()); }
+
+    public List<Book> searchBook(String title) {
+        title = title.toLowerCase();
+        return bookRepository.searchBook(title);
+    }
+
 }

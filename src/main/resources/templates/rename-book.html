@@ -22,33 +22,37 @@
 <div class="book-content">
     <div class="book-content-position">
         <div class="registration">
-            <form method="POST" styleClass="registration" th:object="${book}" th:action="@{'/book/' + ${book.getId()}+ '/edit'}">
-                <div>Название:
+            <form method="POST" th:object="${book}" th:action="@{'/book/' + ${book.getId()}+ '/edit'}">
+                <div class="book-add-edit">Название:
                     <input id="reg1" th:field="*{name}" type="search" placeholder="Название"/>
-                </div>
-                <div>Автор:
+                </div><br>
+                <div class="book-add-edit">Автор:
                     <input id="reg2" th:field="*{author}" type="search" placeholder="Автор"/>
                 </div><br>
-                <div>Описание:
+                <div class="book-add-edit">Описание:
                     <input id="reg3" th:field="*{description}" type="search" placeholder="Описание"/>
                 </div><br>
-                <div>Год издания:
+                <div class="book-add-edit">Год издания:
                     <input id="reg4" th:field="*{year}" type="search" placeholder="Год"/>
-                </div>
-                <div>Жанр:
+                </div><br>
+                <div class="book-add-edit">Жанр:
                     <input id="reg5" th:field="*{genre}" type="search" placeholder="Жанр"/>
-                </div>
-                <div>Язык:
+                </div><br>
+                <div class="book-add-edit">Язык:
                     <input id="reg6" th:field="*{language}" type="search" placeholder="Язык"/>
-                </div>
-                <div>Количество страниц:
+                </div><br>
+                <div class="book-add-edit">Количество страниц:
                     <input id="reg7" th:field="*{page}" type="search" placeholder="Страниц"/>
-                </div>
-                <div>ISBN:
+                </div><br>
+                <div class="book-add-edit">ISBN:
                     <input id="reg8" th:field="*{isbn}" type="search" placeholder="ISBN"/>
                 </div>
-                <button class="button" type="submit">Изменить</button>
-
+                <div class="book-add-edit">
+                    <button class="button" type="submit">Изменить</button>
+                    <button class="button">
+                        <a class="a-button" th:href="@{/home}">Назад</a>
+                    </button>
+                </div>
             </form>
         </div>
 

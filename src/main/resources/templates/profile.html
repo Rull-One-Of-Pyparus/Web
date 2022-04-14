@@ -28,10 +28,12 @@
                 </div>
             </div>
 
-            <div>
-                <input id="search" th:type="search-in-lib" placeholder="Введите название"/>
-                <button type="button" name="search" class="button">Поиск</button>
-            </div>
+
+            <form method="POST" th:action="@{/profile/search}">
+                <!--/*@thymesVar id="sourceText" type="java.lang.String"*/-->
+                <input id="search" th:type="search-in-lib" placeholder="Введите название книги" name="query" th:value="${query}"/>
+                <button class="button" type="submit">Поиск</button>
+            </form>
 
             <div class ="sub-head-line">
                 <div class="sub-head-line-content">
@@ -50,8 +52,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="book: ${books}">
-                    <td th:text="${book.name}"></td>
+                <tr th:each="book: ${books1}">
+                    <td>
+                        <a id="a-profile-book" th:href="@{/book/{id}(id=${book.id})}" >
+                            <h th:text="${book.name}"></h>
+                        </a>
+                    </td>
                     <td th:text="${book.author}"></td>
                     <td th:text="${book.page}"></td>
                     <td th:text="${book.genre}"></td>
@@ -68,7 +74,7 @@
                 </div>
             </div>
 
-            <!--<table>
+            <table>
                 <thead>
                 <tr>
                     <th style="width: 30%">Название</th>
@@ -80,8 +86,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="book: ${books}">
-                    <td th:text="${book.name}"></td>
+                <tr th:each="book: ${books2}">
+                    <td>
+                        <a id="a-profile-book" th:href="@{/book/{id}(id=${book.id})}" >
+                            <h th:text="${book.name}"></h>
+                        </a>
+                    </td>
                     <td th:text="${book.author}"></td>
                     <td th:text="${book.page}"></td>
                     <td th:text="${book.genre}"></td>
@@ -89,7 +99,7 @@
                     <td th:text="${book.language}"></td>
                 </tr>
                 </tbody>
-            </table>-->
+            </table>
 
 
             <div class ="sub-head-line">
@@ -98,7 +108,7 @@
                 </div>
             </div>
 
-            <!--<table>
+            <table>
                 <thead>
                 <tr>
                     <th style="width: 30%">Название</th>
@@ -110,8 +120,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="book: ${books}">
-                    <td th:text="${book.name}"></td>
+                <tr th:each="book: ${books3}">
+                    <td>
+                        <a id="a-profile-book" th:href="@{/book/{id}(id=${book.id})}" >
+                            <h th:text="${book.name}"></h>
+                        </a>
+                    </td>
                     <td th:text="${book.author}"></td>
                     <td th:text="${book.page}"></td>
                     <td th:text="${book.genre}"></td>
@@ -119,7 +133,7 @@
                     <td th:text="${book.language}"></td>
                 </tr>
                 </tbody>
-            </table>-->
+            </table>
 
 
             <div class ="sub-head-line">
@@ -128,7 +142,7 @@
                 </div>
             </div>
 
-            <!--<table>
+            <table>
                 <thead>
                 <tr>
                     <th style="width: 30%">Название</th>
@@ -140,8 +154,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="book: ${books}">
-                    <td th:text="${book.name}"></td>
+                <tr th:each="book: ${books4}">
+                    <td>
+                        <a id="a-profile-book" th:href="@{/book/{id}(id=${book.id})}" >
+                            <h th:text="${book.name}"></h>
+                        </a>
+                    </td>
                     <td th:text="${book.author}"></td>
                     <td th:text="${book.page}"></td>
                     <td th:text="${book.genre}"></td>
@@ -149,7 +167,7 @@
                     <td th:text="${book.language}"></td>
                 </tr>
                 </tbody>
-            </table>-->
+            </table>
 
 
             <div class ="sub-head-line">
@@ -158,7 +176,7 @@
                 </div>
             </div>
 
-            <!--<table>
+            <table>
                 <thead>
                 <tr>
                     <th style="width: 30%">Название</th>
@@ -170,8 +188,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="book: ${books}">
-                    <td th:text="${book.name}"></td>
+                <tr th:each="book: ${books5}">
+                    <td>
+                        <a id="a-profile-book" th:href="@{/book/{id}(id=${book.id})}" >
+                            <h th:text="${book.name}"></h>
+                        </a>
+                    </td>
                     <td th:text="${book.author}"></td>
                     <td th:text="${book.page}"></td>
                     <td th:text="${book.genre}"></td>
@@ -179,7 +201,7 @@
                     <td th:text="${book.language}"></td>
                 </tr>
                 </tbody>
-            </table>-->
+            </table>
 
 
             <div class ="sub-head-line">
@@ -188,7 +210,7 @@
                 </div>
             </div>
 
-            <!--<table>
+            <table>
                 <thead>
                 <tr>
                     <th style="width: 30%">Название</th>
@@ -200,8 +222,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="book: ${books}">
-                    <td th:text="${book.name}"></td>
+                <tr th:each="book: ${books6}">
+                    <td>
+                        <a id="a-profile-book" th:href="@{/book/{id}(id=${book.id})}" >
+                            <h th:text="${book.name}"></h>
+                        </a>
+                    </td>
                     <td th:text="${book.author}"></td>
                     <td th:text="${book.page}"></td>
                     <td th:text="${book.genre}"></td>
@@ -209,7 +235,7 @@
                     <td th:text="${book.language}"></td>
                 </tr>
                 </tbody>
-            </table>-->
+            </table>
         </div>
 
         <div class="back-menu" >

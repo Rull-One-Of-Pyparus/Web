@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +29,38 @@
                     <div class="sub-head-line-text">Действия</div>
                 </div>
             </div>
+
+            <div class="admin-back-menu" th:object="${library}">
+                <form sec:authorize="hasRole('ROLE_ADMIN')"  th:action="@{'/book/' + ${book.getId()}+ '/delete-admin'}" >
+                    <button class="button" type="submit">Удалить книгу из всей библиотеки</button>
+                </form>
+                <div sec:authorize="hasRole('ROLE_ADMIN')">
+                    <button class="button" type="submit">
+                        <a class="a-button" th:href="@{'/book/' + ${book.getId()}+ '/edit-admin'}">Редактировать книгу</a>
+                    </button>
+                </div>
+
+
+
+                <form th:action="@{'/book/' + ${book.getId()}+ '/add-lib'}">
+                    <select th:field="*{status.id}">
+                        <option  value="1">Запланировано</option>
+                        <option  value="2">Читаю</option>
+                        <option  value="3">Перечитываю</option>
+                        <option  value="4">Прочитано</option>
+                        <option  value="5">Отложено</option>
+                        <option  value="6">Брошено</option>
+                    </select>
+                    <button  class="button" type="submit">Добавить в библиотеку</button>
+                </form>
+                <form th:action="@{'/book/' + ${book.getId()}+ '/delete-lib'}">
+                    <button th:action="@{'/book/' + ${book.getId()}+ '/delete-lib'}" class="button" type="submit">Удалить книгу из библиотеки</button>
+                </form>
+            </div>
         </div>
+
+
+
         <div class="book-content-block">
             <div>Название:
                 <p th:text="${book.name}">

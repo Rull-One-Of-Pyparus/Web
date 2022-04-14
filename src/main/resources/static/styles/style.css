@@ -207,6 +207,11 @@ input[type="search-in-lib"] {
     font-size: 20px;
 }
 
+.book-add-edit{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 .button{
     background-color: #858282;

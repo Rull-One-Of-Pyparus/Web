@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Главная</title>
+    <title>Поиск</title>
     <link th:rel="stylesheet" type="text/css" th:href="@{/styles/style.css}"/>
 </head>
 <body>
@@ -30,14 +30,14 @@
 
             <table>
                 <thead>
-                    <tr>
-                        <th style="width: 30%">Название</th>
-                        <th style="width: 30%">Автор</th>
-                        <th>Стр</th>
-                        <th>Жанр</th>
-                        <th>Год издания</th>
-                        <th>Язык</th>
-                    </tr>
+                <tr>
+                    <th style="width: 30%">Название</th>
+                    <th style="width: 30%">Автор</th>
+                    <th>Стр</th>
+                    <th>Жанр</th>
+                    <th>Год издания</th>
+                    <th>Язык</th>
+                </tr>
                 </thead>
                 <tbody>
                 <tr th:each="book: ${books}">
@@ -69,13 +69,11 @@
                     <a class="a-button" th:href="@{/add-book}">Добавить книгу</a>
                 </button>
             </form>
-            <h  th:text="'Всего книг в Библиотеке: '+${books.size()}"/>
 
         </div>
 
 
     </div>
-</div>
 </div>
 </body>
 </html>
