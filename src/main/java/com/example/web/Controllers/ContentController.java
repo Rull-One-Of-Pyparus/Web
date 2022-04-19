@@ -8,10 +8,17 @@ import com.example.web.Services.LibraryService;
 import com.example.web.Services.StatusService;
 import com.example.web.Services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.file.Files;
 import java.security.Principal;
 import java.util.List;
 
@@ -115,9 +122,31 @@ public class ContentController {
     }
 
     @PostMapping("/add-book")
-    public String addBook(@ModelAttribute("book") Book book) {
-        bookService.addBook(book);
-        return "redirect:/home";
+    public String addBook(@RequestParam("file") MultipartFile file, Book book){
+        String name = "src\\main\\resources\\static\\img\\";
+        String extension = StringUtils.getFilenameExtension(file.getOriginalFilename());
+        System.out.println(file.getContentType());
+        if (!file.isEmpty()) {
+            try {
+                byte[] bytes = file.getBytes();
+                BufferedOutputStream stream =
+                        new BufferedOutputStream(new FileOutputStream(new File(name + book.getIsbn() + "." + extension)));
+                stream.write(bytes);
+                stream.close();
+                book.setImg("/img/" + book.getIsbn() + "." + extension);
+                bookService.addBook(book);
+                return "redirect:/home";
+            } catch (Exception e) {
+                return "redirect:/error-upload";
+            }
+        } else {
+            return "redirect:/error-upload";
+        }
+    }
+
+    @RequestMapping("/error-upload")
+    public String errorUpload() {
+        return "error-upload";
     }
 
     @RequestMapping("/profile/search")

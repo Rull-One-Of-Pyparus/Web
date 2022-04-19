@@ -22,7 +22,7 @@
 <div class="book-content">
     <div class="book-content-position">
         <div class="registration">
-            <form method="POST" th:object="${book}" th:action="@{/add-book}">
+            <form method="POST" th:object="${book}" th:action="@{/add-book}" enctype="multipart/form-data">
                 <div class="book-add-edit">Название:
                     <input id="reg1" th:field="*{name}" type="search" placeholder="Название"/>
                 </div><br>
@@ -47,6 +47,9 @@
                 <div class="book-add-edit">ISBN:
                     <input id="reg8" th:field="*{isbn}" type="search" placeholder="ISBN"/>
                 </div>
+
+                <input type="file" name="file">
+
                 <div class="book-add-edit">
                     <button class="button" type="submit">Добавить</button>
                     <button class="button">
